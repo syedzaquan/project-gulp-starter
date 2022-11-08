@@ -1,0 +1,62 @@
+* {
+  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  font-family: Inter, Arial, Arial, Helvetica, sans-serif;
+}
+
+.reveal {
+  @include reveal-animation;
+}
+
+.animate-revealed {
+  @include reveal-animation-complete;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-family: 'Inter';
+
+}
+
+b {
+  font-weight: 600;
+}
+
+@include xl-desktop {
+  .container {
+    max-width: 1650px;
+  }
+}
+
+a,
+a[href^="tel"],
+a[href^="mailto"] {
+  color: inherit;
+  /* Inherit text color of parent element. */
+  text-decoration: none;
+  /* Remove underline. */
+}
+
+// FontAwesome CSS
+.icon {
+  &:before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,87 @@
+@mixin font-face($font-name, $font-folder, $weight, $style: normal) {
+    @font-face {
+        font-family: '#{$font-folder}';
+        font-weight: $weight;
+        font-style: $style;
+        src: url('#{$font-path}/#{$font-folder}/#{$font-name}.eot');
+        src: url('#{$font-path}/#{$font-folder}/#{$font-name}.eot?#iefix') format('embedded-opentype'),
+        url('#{$font-path}/#{$font-folder}/#{$font-name}.woff2') format('woff2'),
+        url('#{$font-path}/#{$font-folder}/#{$font-name}.woff') format('woff'),
+        url('#{$font-path}/#{$font-folder}/#{$font-name}.ttf') format('truetype'),
+        url('#{$font-path}/#{$font-folder}/#{$font-name}.svg#fontawesome') format('svg');
+    }
+}
+
+@mixin bg-img-setting($size: cover, $repeat: no-repeat, $position: center) {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65, 0, .076, 1)) {
+    transition: $property $duration $ease;
+}
+
+@mixin small {
+    @media (min-width: #{$small-device}) {
+        @content;
+    }
+}
+
+@mixin small-max {
+    @media (max-width: #{$small-device}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin tablet-max  {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin desktop-max {
+    @media (max-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin xl-desktop {
+    @media (min-width: #{$xl-desktop-width}) {
+        @content;
+    }
+}
+
+@mixin xl-desktop-max {
+    @media (max-width: #{$xl-desktop-width}) {
+        @content;
+    }
+}
+
+@mixin mobile-container-spacing{
+    padding: 60px 40px;
+}
+
+@mixin reveal-animation {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.5s;
+    transition-timing-function: cubic-bezier(.85, 0, .15, 1);
+    overflow: hidden;
+}
+
+
+@mixin reveal-animation-complete {
+    clip-path: inset(0)
+}
